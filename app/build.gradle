@@ -8,7 +8,7 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.a2019_dev_109.leap_year"
+        applicationId "com.a2019dev109.leapyear"
         minSdkVersion 23
         targetSdkVersion 28
         versionCode 1

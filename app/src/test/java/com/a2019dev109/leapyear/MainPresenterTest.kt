@@ -1,4 +1,4 @@
-package com.a2019_dev_109.leap_year
+package com.a2019dev109.leapyear
 
 import org.junit.Before
 import org.junit.Test
@@ -9,27 +9,27 @@ import org.mockito.Mockito.verify
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
-class PresenterTest {
+class MainPresenterTest {
 
-    private lateinit var presenter: Presenter
+    private lateinit var mainPresenter: MainPresenter
     private val year = 2016
 
-    @Mock private lateinit var view: Contract.View
+    @Mock private lateinit var view: MainContract.View
 
     @Before
     fun setUp() {
-        presenter = Presenter(view)
+        mainPresenter = MainPresenter(view)
     }
 
     @Test
     fun isLeapYear() {
-        presenter.isLeapYear(year)
+        mainPresenter.isLeapYear(year)
         verify(view).showIsLeapYearOrNot(true)
     }
 
     @Test
     fun isNotLeapYear() {
-        presenter.isLeapYear(year)
+        mainPresenter.isLeapYear(year)
         verify(view).showIsLeapYearOrNot(false)
     }
 }

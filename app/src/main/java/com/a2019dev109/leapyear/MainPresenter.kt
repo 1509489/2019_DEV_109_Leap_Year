@@ -1,11 +1,9 @@
-package com.a2019_dev_109.leap_year
+package com.a2019dev109.leapyear
 
-class Presenter(private val view: Contract.View): Contract.Presenter {
+class MainPresenter(private val view: MainContract.View): MainContract.Presenter {
 
     override fun isLeapYear(year: Int) {
         if (divisibleBy400(year))
-            view.showIsLeapYearOrNot(true)
-        else if (divisibleBy100(year) && divisibleBy400(year))
             view.showIsLeapYearOrNot(true)
         else if (divisibleBy4(year) && !divisibleBy100(year))
             view.showIsLeapYearOrNot(true)

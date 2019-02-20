@@ -1,6 +1,6 @@
-package com.a2019_dev_109.leap_year
+package com.a2019dev109.leapyear
 
-interface Contract {
+interface MainContract {
     interface View{
         fun showIsLeapYearOrNot(isLeapYear: Boolean)
     }
