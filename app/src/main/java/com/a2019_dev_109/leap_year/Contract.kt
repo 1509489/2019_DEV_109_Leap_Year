@@ -5,9 +5,6 @@ interface Contract {
         fun showIsLeapYearOrNot(isLeapYear: Boolean)
     }
     interface Presenter{
-        fun isYearDivisibleBy400(year: Int):Boolean
-        fun isYearDivisibleBy100(year: Int):Boolean
-        fun isYearDivisibleBy4(year: Int):Boolean
         fun isLeapYear(year: Int)
     }
 }

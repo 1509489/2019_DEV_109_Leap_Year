@@ -11,6 +11,6 @@ class MainActivity : AppCompatActivity(), Contract.View {
     }
 
     override fun showIsLeapYearOrNot(isLeapYear: Boolean) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 }
