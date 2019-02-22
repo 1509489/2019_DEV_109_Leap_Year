@@ -30,11 +30,16 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         }
     }
 
+    override fun showMessage(message: String) {
+        if (!mainPresenter.isValidInput())
+            tvMessage.text = message
+    }
+
     fun onCheckYear(v: View){
         when(v.id){
             R.id.btnCheck ->{
                 val year = etYear.text.toString()
-                mainPresenter.isLeapYear(year.toInt())
+                mainPresenter.isLeapYear(year)
                 etYear.onEditorAction(EditorInfo.IME_ACTION_DONE)
             }
         }

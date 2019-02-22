@@ -12,7 +12,6 @@ import org.mockito.junit.MockitoJUnitRunner
 class MainPresenterTest {
 
     private lateinit var mainPresenter: MainPresenter
-    private val year = 2016
 
     @Mock private lateinit var view: MainContract.View
 
@@ -23,13 +22,27 @@ class MainPresenterTest {
 
     @Test
     fun isLeapYear() {
-        mainPresenter.isLeapYear(year)
-        verify(view).showIsLeapYearOrNot(true)
+        val years = arrayOf("2016", "2001", "2018")
+
+        years.forEach {
+            mainPresenter.isLeapYear(it)
+            when (it) {
+                "2016" -> verify(view).showIsLeapYearOrNot(true)
+                "2001" -> verify(view).showIsLeapYearOrNot(false)
+                "2018" -> verify(view).showIsLeapYearOrNot(true)
+            }
+        }
     }
 
     @Test
-    fun isNotLeapYear() {
-        mainPresenter.isLeapYear(year)
-        verify(view).showIsLeapYearOrNot(false)
+    fun isValidYearFormat() {
+        mainPresenter.isLeapYear(201.toString())
+        verify(view).showMessage("Year is either too long or short. Year should be like: (2000 or 1901)")
+    }
+
+    @Test
+    fun isValidInput(){
+        mainPresenter.isLeapYear("-201")
+        verify(view).showMessage("Year should not contain alphabets or special characters")
     }
 }
