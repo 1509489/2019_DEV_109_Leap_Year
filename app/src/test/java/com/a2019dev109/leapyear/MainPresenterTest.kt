@@ -22,7 +22,7 @@ class MainPresenterTest {
 
     @Test
     fun isLeapYear() {
-        val years = arrayOf("2016", "2001", "2018")
+        val years = arrayOf("2016", "2001", "2018", "1900")
 
         years.forEach {
             mainPresenter.isLeapYear(it)
@@ -30,6 +30,7 @@ class MainPresenterTest {
                 "2016" -> verify(view).showIsLeapYearOrNot(true)
                 "2001" -> verify(view).showIsLeapYearOrNot(false)
                 "2018" -> verify(view).showIsLeapYearOrNot(true)
+                "1900" -> verify(view).showIsLeapYearOrNot(true)
             }
         }
     }
