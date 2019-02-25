@@ -1,5 +1,5 @@
 # 2019_DEV_109_Leap_Year
-BNP Paribas Fortis Leap Year APP challenge
+Leap Year APP challenge
 
 How to compile and run the code:
 
